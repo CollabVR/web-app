@@ -1,0 +1,9 @@
+.app {
+    display: flex;
+    flex-direction: row;
+}
+
+.body {
+    width: 100%;
+    padding-top: 20px;
+}
