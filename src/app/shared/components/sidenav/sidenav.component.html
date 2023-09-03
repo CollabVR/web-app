@@ -1,0 +1,6 @@
+<div class="sidenav">
+    <a class="sidenav-item" *ngFor="let item of navItems" [routerLink]="[item.router]">
+        <mat-icon fontIcon="{{item.icon}}" />
+        <p>{{item.label}}</p>
+    </a>
+</div>
