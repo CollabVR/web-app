@@ -13,7 +13,6 @@
 }
 
 .sub-header button:last-child {
-    /* Empuja el último elemento al final */
     margin-left: auto;
     margin-right: 32px;
 }
@@ -43,43 +42,4 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-}
-
-.activity-item {
-    background-color: var(--primary-color);
-    width: 300px;
-}
-
-.activity-item:hover {
-    cursor: pointer;
-}
-
-.activity-item img {
-    width: 100%;
-    height: 240px;
-}
-
-.activity-item .text-content {
-    padding: 8px;
-}
-
-.activity-item p.title {
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.activity-item p {
-    margin-bottom: 10px;
-}
-
-.activity-item .button-container {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 10px;
-    padding-left: 8px;
-    padding-right: 8px;
-}
-
-.activity-item button {
-    width: 100%;
 }
