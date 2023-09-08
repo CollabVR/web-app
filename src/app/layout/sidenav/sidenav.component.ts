@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { sidenavItems } from './sidenav-items.data';
 
 @Component({
@@ -7,11 +7,17 @@ import { sidenavItems } from './sidenav-items.data';
   styleUrls: ['./sidenav.component.css']
 })
 export class SidenavComponent {
+  @Output()
+  selectedOpcionEmitter = new EventEmitter<string>();
+  
   navItems = sidenavItems;
   currentSelected = 'Activities';
 
   onSidenavItemSelected(selected: string): void {
     this.currentSelected = selected;
+    this.selectedOpcionEmitter.emit(selected);
   }
+
+
 
 }

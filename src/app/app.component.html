@@ -1,6 +1,7 @@
 <div class="app">
-  <app-sidenav></app-sidenav>
-  <div class="body">
+  <app-sidenav (selectedOpcionEmitter)="handleSelectedOption($event)"></app-sidenav>
+  <div class="app-content">
+    <app-header headerTitle="{{ sidenavOptionSelected }}"></app-header>
     <router-outlet></router-outlet>
   </div>
 </div>
