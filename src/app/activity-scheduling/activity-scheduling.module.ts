@@ -7,6 +7,7 @@ import { MatCardModule } from '@angular/material/card';
 import { ActivityItemComponent } from './components/activity-item/activity-item.component';
 import { ActivityListComponent } from './components/activity-list/activity-list.component';
 import { SharedModule } from '../shared/shared.module';
+import { CreateActivitiesComponent } from './pages/create-activities/create-activities.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { SharedModule } from '../shared/shared.module';
     MyActivitiesComponent,
     ActivityItemComponent,
     ActivityListComponent,
+    CreateActivitiesComponent,
   ],
   imports: [
     CommonModule,

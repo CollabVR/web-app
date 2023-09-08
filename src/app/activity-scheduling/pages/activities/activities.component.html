@@ -1,5 +1,11 @@
 <app-tabs [tabs]="tabOptions" (selectedTabEmitter)="handleSelectedTab($event)">
-  <button rightTabButton mat-raised-button color="primary">CREATE</button>
+  <button
+      (click)="navigateCreateActivity()"
+      rightTabButton 
+      mat-raised-button 
+      color="primary">
+    CREATE
+  </button>
 
   <ng-container appTabContent *ngIf="selectedTab === tabOptions[0]">
     <app-activity-list></app-activity-list>
