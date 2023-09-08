@@ -8,4 +8,10 @@ import { sidenavItems } from './sidenav-items.data';
 })
 export class SidenavComponent {
   navItems = sidenavItems;
+  currentSelected = 'Activities';
+
+  onSidenavItemSelected(selected: string): void {
+    this.currentSelected = selected;
+  }
+
 }
