@@ -1,5 +1,5 @@
-<div class="header">
-  <div class="tabs-container">
+<div class="tab-container">
+  <div class="tab-items-container">
     <h2 class="tab" (click)="onTabClick('Public')" [class.active]="activeTab == 'Public'">Public</h2>
     <h2 class="tab" (click)="onTabClick('Conference')" [class.active]="activeTab == 'Conference'">Conference
     </h2>
@@ -9,29 +9,7 @@
 </div>
 
 <div class="tab-content" *ngIf="activeTab == 'Public'">
-
-  <div class="activity-list">
-    <activity-item></activity-item>
-    <activity-item></activity-item>
-    <activity-item></activity-item>
-    <activity-item></activity-item>
-    <activity-item></activity-item>
-    <activity-item></activity-item>
-    <activity-item></activity-item>
-    <activity-item></activity-item>
-    <activity-item></activity-item>
-    <activity-item></activity-item>
-    <activity-item></activity-item>
-    <activity-item></activity-item>
-    <activity-item></activity-item>
-    <activity-item></activity-item>
-    <activity-item></activity-item>
-    <activity-item></activity-item>
-    <activity-item></activity-item>
-    <activity-item></activity-item>
-    <activity-item></activity-item>
-  </div>
-
+  <app-activity-list></app-activity-list>
 </div>
 
 <div class="tab-content" *ngIf="activeTab == 'Conference'">Conference</div>
