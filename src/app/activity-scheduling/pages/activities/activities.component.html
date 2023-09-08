@@ -1,20 +1,32 @@
 <div class="header">
-  <h1>Activities</h1>
-
-  <div class="sub-header">
-    <div class="tabs-container">
-      <h2 class="tab" (click)="onTabClick('Public')" [class.active]="activeTab == 'Public'">Public</h2>
-      <h2 class="tab" (click)="onTabClick('Conference')" [class.active]="activeTab == 'Conference'">Conference
-      </h2>
-      <h2 class="tab" (click)="onTabClick('Taller')" [class.active]="activeTab == 'Taller'">Taller</h2>
-    </div>
-    <button mat-raised-button color="primary">CREATE</button>
+  <div class="tabs-container">
+    <h2 class="tab" (click)="onTabClick('Public')" [class.active]="activeTab == 'Public'">Public</h2>
+    <h2 class="tab" (click)="onTabClick('Conference')" [class.active]="activeTab == 'Conference'">Conference
+    </h2>
+    <h2 class="tab" (click)="onTabClick('Taller')" [class.active]="activeTab == 'Taller'">Taller</h2>
   </div>
+  <button mat-raised-button color="primary">CREATE</button>
 </div>
 
 <div class="tab-content" *ngIf="activeTab == 'Public'">
 
   <div class="activity-list">
+    <activity-item></activity-item>
+    <activity-item></activity-item>
+    <activity-item></activity-item>
+    <activity-item></activity-item>
+    <activity-item></activity-item>
+    <activity-item></activity-item>
+    <activity-item></activity-item>
+    <activity-item></activity-item>
+    <activity-item></activity-item>
+    <activity-item></activity-item>
+    <activity-item></activity-item>
+    <activity-item></activity-item>
+    <activity-item></activity-item>
+    <activity-item></activity-item>
+    <activity-item></activity-item>
+    <activity-item></activity-item>
     <activity-item></activity-item>
     <activity-item></activity-item>
     <activity-item></activity-item>

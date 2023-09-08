@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PageNotFoundView } from './page-not-found.view';
+import { HeaderComponent } from './header.component';
 
-describe('PageNotFoundComponent', () => {
-  let component: PageNotFoundView;
-  let fixture: ComponentFixture<PageNotFoundView>;
+describe('HeaderComponent', () => {
+  let component: HeaderComponent;
+  let fixture: ComponentFixture<HeaderComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [PageNotFoundView]
+      declarations: [HeaderComponent]
     });
-    fixture = TestBed.createComponent(PageNotFoundView);
+    fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

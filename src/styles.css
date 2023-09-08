@@ -5,9 +5,11 @@
 }
 
 :root {
-    --primary-color: #daddde;
-    --secondary-color: #bcbcbc;
-    --background-color: white;
+    --primary-color: #3f51b5;
+    --secondary-color: white;
+    --background-color: rgb(243, 246, 255);
+    --border-radius: 10px;
+    --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     --font-size: 16px;
 }
 
