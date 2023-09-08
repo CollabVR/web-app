@@ -1,1 +1,12 @@
-<p>my-activities works!</p>
+<app-tabs [tabs]="tabOptions" (selectedTabEmitter)="handleSelectedTab($event)">
+
+  <ng-container appTabContent *ngIf="selectedTab === tabOptions[0]">
+    <app-activity-list></app-activity-list>
+  </ng-container>
+
+  <ng-container appTabContent *ngIf="selectedTab === tabOptions[1]">
+    <div>
+      Contenido de la pestaña 2
+    </div>
+  </ng-container>
+</app-tabs>

@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./my-activities.component.css']
 })
 export class MyActivitiesComponent {
+  tabOptions: string[] = ['Public', 'Conference'];
+  selectedTab: string = this.tabOptions[0];
+
+  handleSelectedTab(selectedTab: string): void {
+    this.selectedTab = selectedTab;
+    console.log(selectedTab)
+  }
 
 }
