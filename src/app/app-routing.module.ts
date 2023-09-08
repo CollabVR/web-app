@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ActivitiesComponent } from './modules/activity-scheduling/pages/activities/activities.component';
-import { MyActivitiesComponent } from './modules/activity-scheduling/pages/my-activities/my-activities.component';
+import { ActivitiesComponent } from './activity-scheduling/pages/activities/activities.component';
+import { MyActivitiesComponent } from './activity-scheduling/pages/my-activities/my-activities.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/activities', pathMatch: 'full' },
