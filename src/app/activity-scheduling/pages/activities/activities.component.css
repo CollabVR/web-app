@@ -1,37 +1,26 @@
-.header {
+.tab-container {
     display: flex;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
-.header button:last-child {
-    margin-left: auto;
-    margin-right: 32px;
-}
-
-.tabs-container {
+.tab-items-container {
+    display: flex;
+    align-items: center;
     width: 100%;
-    display: flex;
 }
 
-.tabs-container h2 {
-    margin-right: 32px;
+.tab-items-container h2 {
+    margin-right: 20px;
     color: gray;
     font-weight: 500;
 }
 
-.tabs-container .active {
+.tab-items-container .active {
     color: black;
     font-weight: 700;
-}
-
-.tab-content {
-    height: 80vh;
-}
-
-/*activity-list component*/
-.activity-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
 }
