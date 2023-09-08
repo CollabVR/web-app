@@ -1,7 +1,7 @@
 <div class="sidenav">
-    <a class="sidenav-item" *ngFor="let item of navItems" [routerLink]="[item.router]"
-        [class.sidenav-item-selected]="item.label == currentSelected" (click)="onSidenavItemSelected(item.label)">
-        <mat-icon fontIcon="{{item.icon}}" [style.color]="(item.label === currentSelected) ? 'white' : ''" />
-        <p>{{item.label}}</p>
-    </a>
+  <a class="sidenav-item" *ngFor="let item of navItems" [routerLink]="[item.router]"
+    [class.sidenav-item-selected]="item.label == currentSelected" (click)="onSidenavItemSelected(item.label)">
+    <mat-icon fontIcon="{{ item.icon }}" [style.color]="(item.label === currentSelected) ? 'white' : ''" />
+    <p>{{ item.label }}</p>
+  </a>
 </div>

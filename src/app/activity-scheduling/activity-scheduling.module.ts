@@ -6,6 +6,7 @@ import { MyActivitiesComponent } from './pages/my-activities/my-activities.compo
 import { MatCardModule } from '@angular/material/card';
 import { ActivityItemComponent } from './components/activity-item/activity-item.component';
 import { ActivityListComponent } from './components/activity-list/activity-list.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -16,8 +17,9 @@ import { ActivityListComponent } from './components/activity-list/activity-list.
   ],
   imports: [
     CommonModule,
+    SharedModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
   ]
 })
 export class ActivitySchedulingModule { }

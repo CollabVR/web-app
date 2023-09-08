@@ -6,10 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./activities.component.css']
 })
 export class ActivitiesComponent {
-  activeTab: string = 'Public';
+  tabOptions: string[] = ['Public', 'Conference', 'Taller'];
+  selectedTab: string = this.tabOptions[0];
 
-  onTabClick(tabName: string): void {
-    this.activeTab = tabName;
+  handleSelectedTab(selectedTab: string): void {
+    this.selectedTab = selectedTab;
+    console.log(selectedTab)
   }
+
 
 }

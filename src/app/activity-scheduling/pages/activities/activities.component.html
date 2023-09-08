@@ -1,16 +1,8 @@
-<div class="tab-container">
-  <div class="tab-items-container">
-    <h2 class="tab" (click)="onTabClick('Public')" [class.active]="activeTab == 'Public'">Public</h2>
-    <h2 class="tab" (click)="onTabClick('Conference')" [class.active]="activeTab == 'Conference'">Conference
-    </h2>
-    <h2 class="tab" (click)="onTabClick('Taller')" [class.active]="activeTab == 'Taller'">Taller</h2>
-  </div>
-  <button mat-raised-button color="primary">CREATE</button>
-</div>
+<app-tabs [tabs]="tabOptions" (selectedTabEmitter)="handleSelectedTab($event)">
+  <button rightTabButton mat-raised-button color="primary">CREATE</button>
 
-<div class="tab-content" *ngIf="activeTab == 'Public'">
-  <app-activity-list></app-activity-list>
-</div>
+  <ng-container appTabContent *ngIf="selectedTab === tabOptions[0]">
+    <app-activity-list></app-activity-list>
+  </ng-container>
 
-<div class="tab-content" *ngIf="activeTab == 'Conference'">Conference</div>
-<div class="tab-content" *ngIf="activeTab == 'Taller'">Taller</div>
+</app-tabs>
