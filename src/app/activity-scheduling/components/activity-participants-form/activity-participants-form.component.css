@@ -18,43 +18,6 @@
     gap: 20px;
 }
 
-.input {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Estilo base para el input */
-.material-input {
-    display: block;
-    padding: 10px;
-    font-size: 16px;
-    border: 0px;
-    height: 35px;
-    background-color: #f5f5f5;
-    border-bottom: 1px solid #9d9d9d;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    transition: border-color 0.2s ease;
-}
-
-.material-input:hover {
-    background-color: #ececec;
-}
-
-/* Estilo cuando el input está enfocado */
-.material-input:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
-}
-
-/* Estilo para el label (etiqueta) del input */
-.material-label {
-    font-size: 14px;
-    color: #777;
-    margin-bottom: 5px;
-}
-
 .participants-content {
     display: flex;
     flex-direction: column;

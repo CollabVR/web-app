@@ -15,15 +15,12 @@
       </div>
 
       <div class="time-content">
-        <div class="input">
-          <label class="material-label">Start Time:</label>
-          <input class="material-input" type="time" formControlName="startTimeCtrl">
-        </div>
-
-        <div class="input">
-          <label class="material-label">End Time:</label>
-          <input class="material-input" type="time" formControlName="endTimeCtrl">
-        </div>
+        <app-time-input label="Start Time">
+          <input input type="time" formControlName="startTimeCtrl">
+        </app-time-input>
+        <app-time-input label="End Time">
+          <input input type="time" formControlName="endTimeCtrl">
+        </app-time-input>
       </div>
 
     </div>
