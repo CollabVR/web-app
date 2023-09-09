@@ -10,12 +10,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .activity-detail > .content {
     padding: 20px;
 }
 
-.activity-detail > .content p {
-    margin-top: 10px;
+.activity-detail > .content .schedule {
+    margin-top: 8px;
+}
+
+.activity-detail > .content .description {
+    margin-top: 20px;
 }

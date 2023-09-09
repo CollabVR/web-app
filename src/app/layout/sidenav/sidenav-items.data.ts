@@ -18,6 +18,6 @@ export const sidenavItems: Array<SideNavItem> = [
   {
     icon: 'dashboard',
     label: 'Dashboard',
-    router: ''
+    router: 'dashboard'
   },
 ]
