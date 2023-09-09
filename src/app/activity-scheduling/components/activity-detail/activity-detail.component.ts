@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-activity-detail',
@@ -7,12 +6,5 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./activity-detail.component.css']
 })
 export class ActivityDetailComponent {
-  activityId!: number;
-
-  constructor(private route: ActivatedRoute) {
-    this.route.params.subscribe(params => {
-      this.activityId =+ params['id'];
-    })
-  }
 
 }
