@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'activity-item',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./activity-item.component.css']
 })
 export class ActivityItemComponent {
+
+  constructor(private router: Router) {}
+
+  onItemClicked(): void {
+    this.router.navigate(['activities', 1]);
+  }
 
 }

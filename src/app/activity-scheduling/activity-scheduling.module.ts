@@ -19,6 +19,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { GeneralActivityDetailFormComponent } from './components/general-activity-detail-form/general-activity-detail-form.component';
 import { ActivityParticipantsFormComponent } from './components/activity-participants-form/activity-participants-form.component';
 import { ActivityEnvironmentsFormComponent } from './components/activity-environments-form/activity-environments-form.component';
+import { ActivityDetailComponent } from './pages/activity-detail/activity-detail.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { ActivityEnvironmentsFormComponent } from './components/activity-environ
     GeneralActivityDetailFormComponent,
     ActivityParticipantsFormComponent,
     ActivityEnvironmentsFormComponent,
+    ActivityDetailComponent,
   ],
   imports: [
     CommonModule,
