@@ -1,0 +1,32 @@
+<form [formGroup]="formGroup">
+  <mat-radio-group aria-label="Select an option" formControlName="environmentCtrl">
+    <div class="environments-content">
+
+      <mat-card class="environment-item">
+        <img mat-card-image
+          src="https://assetstorev1-prd-cdn.unity3d.com/key-image/673fa390-9e7d-4c7a-ad5c-abd8baf77704.jpg">
+        <mat-card-header>
+          <mat-card-title>Environment Title</mat-card-title>
+        </mat-card-header>
+        <mat-card-actions>
+          <mat-radio-button value="environment 1" labelPosition="after">
+            Select
+          </mat-radio-button>
+        </mat-card-actions>
+      </mat-card>
+      <mat-card class="environment-item">
+        <img mat-card-image
+          src="https://assetstorev1-prd-cdn.unity3d.com/key-image/673fa390-9e7d-4c7a-ad5c-abd8baf77704.jpg">
+        <mat-card-header>
+          <mat-card-title>Environment Title</mat-card-title>
+        </mat-card-header>
+        <mat-card-actions>
+          <mat-radio-button value="environment 2" labelPosition="after">
+            Select
+          </mat-radio-button>
+        </mat-card-actions>
+      </mat-card>
+
+    </div>
+  </mat-radio-group>
+</form>

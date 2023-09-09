@@ -1,6 +1,8 @@
 .sidenav {
     background-color: var(--secondary-color);
-    margin: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     height: calc(100vh - 40px);
     width: 280px;
     border-radius: var(--border-radius);

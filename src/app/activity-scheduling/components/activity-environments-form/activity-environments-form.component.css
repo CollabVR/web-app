@@ -1,0 +1,15 @@
+.environments-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.environment-item {
+    width: 300px;
+}
+
+.environment-item:hover {
+    cursor: pointer;
+}

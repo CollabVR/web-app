@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { MatIconModule } from '@angular/material/icon';
-import { HeaderComponent } from './header/header.component';
+import { MainHeaderComponent } from './main-header/main-header.component';
 
 
 @NgModule({
-  declarations: [SidenavComponent, HeaderComponent],
-  exports: [SidenavComponent, HeaderComponent],
+  declarations: [SidenavComponent, MainHeaderComponent],
+  exports: [SidenavComponent, MainHeaderComponent],
   imports: [
     CommonModule,
     AppRoutingModule,

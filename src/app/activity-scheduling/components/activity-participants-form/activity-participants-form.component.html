@@ -1,0 +1,49 @@
+<form [formGroup]="formGroup">
+
+  <div class="form-content">
+
+    <div class="schedule-content">
+      <h4>Schedule</h4>
+
+      <div class="input">
+        <label class="material-label">Day:</label>
+        <mat-form-field style="margin-bottom: -1.25em">
+          <input matInput [matDatepicker]="picker" formControlName="dateCtrl" placeholder="dd/mm/YYYY">
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div class="time-content">
+        <app-time-input label="Start Time">
+          <input input type="time" formControlName="startTimeCtrl">
+        </app-time-input>
+        <app-time-input label="End Time">
+          <input input type="time" formControlName="endTimeCtrl">
+        </app-time-input>
+      </div>
+
+    </div>
+
+    <div class="participants-content">
+      <h4>Participants</h4>
+
+      <div class="number-participants-content">
+        <label class="material-label">Number of participants:</label>
+        <mat-radio-group>
+          <mat-radio-button value="10">5</mat-radio-button>
+          <mat-radio-button value="10">10</mat-radio-button>
+          <mat-radio-button value="10">15</mat-radio-button>
+          <mat-radio-button value="10">20</mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div>
+    <button mat-button matStepperPrevious>Back</button>
+    <button mat-button matStepperNext color="primary">Next</button>
+  </div>
+</form>
