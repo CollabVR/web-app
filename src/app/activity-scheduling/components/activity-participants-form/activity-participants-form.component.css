@@ -1,0 +1,75 @@
+.form-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.schedule-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.time-content {
+    display: flex;
+    gap: 20px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo base para el input */
+.material-input {
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    border: 0px;
+    height: 35px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #9d9d9d;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    transition: border-color 0.2s ease;
+}
+
+.material-input:hover {
+    background-color: #ececec;
+}
+
+/* Estilo cuando el input está enfocado */
+.material-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Estilo para el label (etiqueta) del input */
+.material-label {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.participants-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.number-participants-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.number-participants-content  > mat-radio-group > mat-radio-button {
+    margin-right: 10px;
+}

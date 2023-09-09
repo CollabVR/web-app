@@ -13,6 +13,13 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatRadioModule } from '@angular/material/radio';
+import { GeneralActivityDetailFormComponent } from './components/general-activity-detail-form/general-activity-detail-form.component';
+import { ActivityParticipantsFormComponent } from './components/activity-participants-form/activity-participants-form.component';
+import { ActivityEnvironmentsFormComponent } from './components/activity-environments-form/activity-environments-form.component';
+
 
 @NgModule({
   declarations: [
@@ -21,6 +28,9 @@ import { MatInputModule } from '@angular/material/input';
     ActivityItemComponent,
     ActivityListComponent,
     CreateActivitiesComponent,
+    GeneralActivityDetailFormComponent,
+    ActivityParticipantsFormComponent,
+    ActivityEnvironmentsFormComponent,
   ],
   imports: [
     CommonModule,
@@ -32,6 +42,10 @@ import { MatInputModule } from '@angular/material/input';
     MatInputModule,
     ReactiveFormsModule,
     FormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatRadioModule,
+    
   ]
 })
 export class ActivitySchedulingModule { }

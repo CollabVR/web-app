@@ -8,12 +8,21 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./create-activities.component.css']
 })
 export class CreateActivitiesComponent {
-  
-  firstFormGroup = this._formBuilder.group({
-    firstCtrl: ['', Validators.required],
+
+  generalActivityDetailFormGroup = this._formBuilder.group({
+    titleCtrl: ['', Validators.required],
+    descriptionCtrl: ['', Validators.required]
   });
-  secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
+
+  specificActivityDetailFormGroup = this._formBuilder.group({
+    dateCtrl: ['', Validators.required],
+    startTimeCtrl: ['', Validators.required],
+    endTimeCtrl: ['', Validators.required],
+    numParticipantsCtrl: ['', Validators.required],
+  });
+
+  activityEnvironmentsFormGroup = this._formBuilder.group({
+    environmentCtrl: ['', Validators.required],
   });
 
   constructor(private _formBuilder: FormBuilder) {}
