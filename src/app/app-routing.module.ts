@@ -4,6 +4,7 @@ import { ActivitiesComponent } from './activity-scheduling/pages/activities/acti
 import { MyActivitiesComponent } from './activity-scheduling/pages/my-activities/my-activities.component';
 import { CreateActivitiesComponent } from './activity-scheduling/pages/create-activities/create-activities.component';
 import { ActivityComponent } from './activity-scheduling/pages/activity/activity.component';
+import { PageNotFoundView } from './views/page-not-found/page-not-found.view';
 
 const routes: Routes = [
   { path: '', redirectTo: '/activities', pathMatch: 'full' },
@@ -12,7 +13,7 @@ const routes: Routes = [
     component: ActivitiesComponent,
   },
   {
-    path: 'activities/:id', 
+    path: 'activities/:id',
     component: ActivityComponent,
   },
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'create-activity',
     component: CreateActivitiesComponent,
+  },
+  {
+    path: '**',
+    component: PageNotFoundView
   }
 ];
 

@@ -12,6 +12,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatDividerModule } from '@angular/material/divider';
 
 import { ActivitiesComponent } from './pages/activities/activities.component';
 import { MyActivitiesComponent } from './pages/my-activities/my-activities.component';
@@ -54,6 +55,7 @@ import { ActivityParticipantsComponent } from './components/activity-participant
     MatDatepickerModule,
     MatNativeDateModule,
     MatRadioModule,
+    MatDividerModule,
   ]
 })
 export class ActivitySchedulingModule { }

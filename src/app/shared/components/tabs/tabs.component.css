@@ -12,6 +12,8 @@
 .tab-container {
     display: flex;
     width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .tab {
@@ -27,6 +29,7 @@
 
 .tab:hover {
     cursor: pointer;
+    color: black;
 }
 
 .tab-content {
