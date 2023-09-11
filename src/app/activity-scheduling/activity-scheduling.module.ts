@@ -10,9 +10,11 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatFormFieldModule } from '@angular/material/form-field';
+
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { ActivitiesComponent } from './pages/activities/activities.component';
 import { MyActivitiesComponent } from './pages/my-activities/my-activities.component';
@@ -26,7 +28,6 @@ import { ActivityEnvironmentsFormComponent } from './components/activity-environ
 import { ActivityComponent } from './pages/activity/activity.component';
 import { ActivityDetailComponent } from './components/activity-detail/activity-detail.component';
 import { ActivityParticipantsComponent } from './components/activity-participants/activity-participants.component';
-
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { ActivityParticipantsComponent } from './components/activity-participant
     MatNativeDateModule,
     MatRadioModule,
     MatDividerModule,
-  ]
+    MatSnackBarModule,
+  ],
 })
-export class ActivitySchedulingModule { }
+export class ActivitySchedulingModule {}

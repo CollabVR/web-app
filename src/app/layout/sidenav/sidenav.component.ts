@@ -17,7 +17,4 @@ export class SidenavComponent {
     this.currentSelected = selected;
     this.selectedOpcionEmitter.emit(selected);
   }
-
-
-
 }
