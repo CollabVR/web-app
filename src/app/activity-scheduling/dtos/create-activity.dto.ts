@@ -5,6 +5,6 @@ export class CreateActivityDto {
     public startTime: string,
     public endTime: string,
     public maxParticipants: number,
-    public environmentId: number
+    public environmentId: string
   ) {}
 }

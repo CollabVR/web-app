@@ -8,7 +8,7 @@ export class ActivityEntity {
     public maxParticipants: number,
     public participants: number[],
     public moderators: number[],
-    public environmentId: number,
+    public environmentId: string,
     public status: string
   ) {}
 }

@@ -32,7 +32,7 @@ export class CreateActivitiesComponent {
       startTime,
       endTime,
       Number(this.specificActivityDetailFormGroup.value.numParticipantsCtrl!),
-      Number(this.activityEnvironmentsFormGroup.value.environmentCtrl!)
+      this.activityEnvironmentsFormGroup.value.environmentCtrl!
     );
 
     console.log('createActivityDto', createActivityDto);
@@ -78,6 +78,6 @@ export class CreateActivitiesComponent {
   });
 
   activityEnvironmentsFormGroup = this._formBuilder.group({
-    environmentCtrl: [0, Validators.required],
+    environmentCtrl: ['', Validators.required],
   });
 }
