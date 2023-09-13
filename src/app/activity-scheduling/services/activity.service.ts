@@ -4,6 +4,8 @@ import { environment } from 'src/environments/environment';
 import { CreateActivityDto } from '../dtos/create-activity.dto';
 import { catchError, throwError } from 'rxjs';
 import { ActivityEntity } from '../dtos/activity.entity';
+import { ActivityUserEntity } from '../dtos/activity-user.entity';
+import { ActivityUserRole } from '../dtos/activity-user-role.enum';
 
 @Injectable({
   providedIn: 'root',
@@ -21,6 +23,38 @@ export class ActivityService {
         return throwError(() => new Error(error.message));
       })
     );
+  }
+
+  registerToActivity(
+    activity: ActivityEntity,
+    activityUserEntity: ActivityUserEntity,
+    role: ActivityUserRole
+  ) {
+    if (
+      activity.maxParticipants <=
+      activity.students.length + activity.moderators.length
+    ) {
+      alert('Activity is full');
+      return throwError(() => new Error('Activity is full'));
+    }
+
+    switch (role) {
+      case ActivityUserRole.STUDENT:
+        activity.students.push(activityUserEntity);
+        break;
+      case ActivityUserRole.MODERATOR:
+        activity.moderators.push(activityUserEntity);
+        break;
+    }
+
+    return this.http
+      .put<ActivityEntity>(`${this.domain}/activities/${activity.id}`, activity)
+      .pipe(
+        catchError((error) => {
+          console.log('error', error);
+          return throwError(() => new Error(error.message));
+        })
+      );
   }
 
   getActivityById(id: number) {

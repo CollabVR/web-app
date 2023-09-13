@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { UtilsService } from 'src/app/shared/services/utils.service';
 import { ActivityService } from '../../services/activity.service';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ActivityEntity } from '../../dtos/activity.entity';
+import { ActivityUserEntity } from '../../dtos/activity-user.entity';
+import { ActivityUserRole } from '../../dtos/activity-user-role.enum';
 
 @Component({
   selector: 'app-activity-detail',
@@ -11,34 +13,23 @@ import { ActivityEntity } from '../../dtos/activity.entity';
   styleUrls: ['./activity-detail.component.css'],
 })
 export class ActivityDetailComponent {
-  private subActivity?: Subscription;
-  public activity?: ActivityEntity;
+  @Input() activity?: ActivityEntity;
 
   constructor(
-    private activityService: ActivityService,
-    private route: ActivatedRoute,
-    public utils: UtilsService
+    public utils: UtilsService,
+    public activityService: ActivityService
   ) {}
 
-  ngOnInit(): void {
-    this.subActivity = this.route.params.subscribe((params) => {
-      const id = params['id'];
-      this.loadActivity(id);
-    });
-  }
+  onRegister() {
+    const user: ActivityUserEntity = {
+      userId: 44,
+      userName: 'Juan 22',
+    };
 
-  ngOnDestroy(): void {
-    this.subActivity?.unsubscribe();
-  }
-
-  private loadActivity(id: number): void {
-    this.activityService.getActivityById(id).subscribe((activity) => {
-      console.log(activity);
-      this.activity = activity;
-    });
-  }
-
-  onJoin(): void {
-    console.log('Joining activity');
+    this.activityService
+      .registerToActivity(this.activity!, user, ActivityUserRole.STUDENT)
+      .subscribe((activity) => {
+        this.activity = activity;
+      });
   }
 }

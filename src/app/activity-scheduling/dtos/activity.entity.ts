@@ -1,3 +1,5 @@
+import { ActivityUserEntity } from './activity-user.entity';
+
 export class ActivityEntity {
   constructor(
     public id: number,
@@ -6,8 +8,8 @@ export class ActivityEntity {
     public startTime: string,
     public endTime: string,
     public maxParticipants: number,
-    public participants: number[],
-    public moderators: number[],
+    public students: ActivityUserEntity[] = [],
+    public moderators: ActivityUserEntity[] = [],
     public environmentId: string,
     public status: string
   ) {}

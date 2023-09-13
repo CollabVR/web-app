@@ -11,6 +11,7 @@ export class UtilsService {
       return '';
     }
     let date = new Date(time);
+    date.setSeconds(0);
     return date.toLocaleString();
   }
 }
