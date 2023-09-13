@@ -57,6 +57,34 @@ export class ActivityService {
       );
   }
 
+  leaveActivity(
+    activity: ActivityEntity,
+    activityUserId: number,
+    role: ActivityUserRole
+  ) {
+    switch (role) {
+      case ActivityUserRole.STUDENT:
+        activity.students = activity.students.filter(
+          (student) => student.userId !== activityUserId
+        );
+        break;
+      case ActivityUserRole.MODERATOR:
+        activity.moderators = activity.moderators.filter(
+          (moderator) => moderator.userId !== activityUserId
+        );
+        break;
+    }
+    console.log(activity);
+    return this.http
+      .put<ActivityEntity>(`${this.domain}/activities/${activity.id}`, activity)
+      .pipe(
+        catchError((error) => {
+          console.log('error', error);
+          return throwError(() => new Error(error.message));
+        })
+      );
+  }
+
   getActivityById(id: number) {
     return this.http
       .get<ActivityEntity>(`${this.domain}/activities/${id}`)

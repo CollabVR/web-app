@@ -38,7 +38,5 @@ export class ActivityComponent {
     });
   }
 
-  onJoin(): void {
-    console.log('Joining activity');
-  }
+
 }

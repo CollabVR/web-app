@@ -22,12 +22,25 @@ export class ActivityDetailComponent {
 
   onRegister() {
     const user: ActivityUserEntity = {
-      userId: 44,
-      userName: 'Juan 22',
+      userId: 55,
+      userName: 'Juan 55',
     };
 
     this.activityService
       .registerToActivity(this.activity!, user, ActivityUserRole.STUDENT)
+      .subscribe((activity) => {
+        this.activity = activity;
+      });
+  }
+
+  onLeaveActivity() {
+    const user: ActivityUserEntity = {
+      userId: 55,
+      userName: 'Juan 55',
+    };
+
+    this.activityService
+      .leaveActivity(this.activity!, user.userId, ActivityUserRole.STUDENT)
       .subscribe((activity) => {
         this.activity = activity;
       });
