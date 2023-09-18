@@ -28,6 +28,7 @@ import { ActivityEnvironmentsFormComponent } from './components/activity-environ
 import { ActivityComponent } from './pages/activity/activity.component';
 import { ActivityDetailComponent } from './components/activity-detail/activity-detail.component';
 import { ActivityParticipantsComponent } from './components/activity-participants/activity-participants.component';
+import { ActivitySchedulingRoutingModule } from './activity-scheduling-routing.module';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { ActivityParticipantsComponent } from './components/activity-participant
     MatRadioModule,
     MatDividerModule,
     MatSnackBarModule,
+    ActivitySchedulingRoutingModule,
   ],
 })
 export class ActivitySchedulingModule {}

@@ -1,8 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { UtilsService } from 'src/app/shared/services/utils.service';
+import { UtilsService } from 'src/app/core/services/utils.service';
 import { ActivityService } from '../../services/activity.service';
-import { Subscription } from 'rxjs';
-import { ActivatedRoute, Router } from '@angular/router';
+
 import { ActivityEntity } from '../../dtos/activity.entity';
 import { ActivityUserEntity } from '../../dtos/activity-user.entity';
 import { ActivityUserRole } from '../../dtos/activity-user-role.enum';
@@ -22,12 +21,12 @@ export class ActivityDetailComponent {
 
   onRegister() {
     const user: ActivityUserEntity = {
-      userId: 55,
-      userName: 'Juan 55',
+      userId: 62,
+      userName: 'Luis 45',
     };
 
     this.activityService
-      .registerToActivity(this.activity!, user, ActivityUserRole.STUDENT)
+      .registerToActivity(this.activity!, user, ActivityUserRole.MODERATOR)
       .subscribe((activity) => {
         this.activity = activity;
       });
@@ -40,8 +39,9 @@ export class ActivityDetailComponent {
     };
 
     this.activityService
-      .leaveActivity(this.activity!, user.userId, ActivityUserRole.STUDENT)
+      .leaveActivity(this.activity!, user.userId, ActivityUserRole.MODERATOR)
       .subscribe((activity) => {
+        console.log('deleted activity', activity);
         this.activity = activity;
       });
   }

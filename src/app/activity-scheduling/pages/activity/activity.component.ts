@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ActivityEntity } from '../../dtos/activity.entity';
 import { ActivityService } from '../../services/activity.service';
-import { UtilsService } from 'src/app/shared/services/utils.service';
+import { UtilsService } from 'src/app/core/services/utils.service';
 
 @Component({
   selector: 'app-activity',

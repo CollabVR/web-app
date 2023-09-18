@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActivityEntity } from '../../dtos/activity.entity';
-import { UtilsService } from 'src/app/shared/services/utils.service';
+import { UtilsService } from 'src/app/core/services/utils.service';
 
 @Component({
   selector: 'activity-item',

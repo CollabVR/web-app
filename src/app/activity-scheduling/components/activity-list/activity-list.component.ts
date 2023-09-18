@@ -16,7 +16,6 @@ export class ActivityListComponent {
     this.activityService
       .getAllActivities()
       .subscribe((data: ActivityEntity[]) => {
-        console.log('data', data);
         this.activities = data;
       });
   }
