@@ -1,0 +1,47 @@
+.sidenav {
+    background-color: var(--primary-color);
+    /* margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px; */
+    height: 100%;
+    width: 280px;
+    /* border-radius: var(--border-radius); */
+    box-shadow: var(--box-shadow);
+}
+
+.sidenav .logo {
+    display: flex;
+    padding-left: 26px;
+    justify-content: flex-start;
+    position: relative;
+    top: 26px;
+    color: var(--secondary-color);
+
+}
+
+.sidenav-item {
+    display: flex;
+    position: relative;
+    top: 50px;
+    height: 50px;
+    align-items: center;
+    padding-left: 26px;
+}
+
+.sidenav-item-selected {
+    background-color: var(--secondary-color);
+}
+
+.sidenav-item mat-icon {
+    color: white;
+    margin-right: 16px;
+}
+
+.sidenav-item p {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.sidenav a {
+    color: white;
+}

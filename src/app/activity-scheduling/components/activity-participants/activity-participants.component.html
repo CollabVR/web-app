@@ -1,0 +1,28 @@
+<div class="activity-participants">
+  <div class="header-content">
+    <h2>Participants: {{activity?.moderators?.length! + activity?.students?.length! + "/"  + activity?.maxParticipants}}</h2>
+  </div>
+
+  <div class="participants">
+    <h3 class="header-content">Estudiantes:</h3>
+    <div class="participants-list">
+      <mat-card>
+        <div *ngFor="let participant of activity?.students">
+          <mat-card-content>{{participant.userName}}</mat-card-content>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+
+  <div class="participants">
+    <h3 class="header-content">Moderadores:</h3>
+    <div class="participants-list">
+      <mat-card>
+        <div *ngFor="let participant of activity?.moderators">
+          <mat-card-content>{{participant.userName}}</mat-card-content>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+
+</div>

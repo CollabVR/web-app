@@ -1,0 +1,17 @@
+<div class="sidenav">
+  <div class="logo">
+    <h2>Collab VR</h2>
+  </div>
+
+  <a *ngFor="let item of navItems" class="sidenav-item" 
+    [routerLink]="[item.router]"
+    [class.sidenav-item-selected]="item.label == currentSelected"
+    [style.color]="(item.label === currentSelected) ? 'var(--primary-color)' : ''"
+    (click)="item.router === 'auth/logout' ? logout() : onSidenavItemSelected(item.label)">
+
+    <mat-icon fontIcon="{{ item.icon }}"
+      [style.color]="(item.label === currentSelected) ? 'var(--primary-color)' : ''" />
+    <p>{{ item.label }}</p>
+
+  </a>
+</div>

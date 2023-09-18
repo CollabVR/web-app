@@ -1,0 +1,38 @@
+.form-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.schedule-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.time-content {
+    display: flex;
+    gap: 20px;
+}
+
+.participants-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.number-participants-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.number-participants-content  > mat-radio-group > mat-radio-button {
+    margin-right: 10px;
+}

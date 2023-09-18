@@ -1,0 +1,12 @@
+<div class="tabs">
+  <div class="tab-container">
+    <h2 class="tab" [class.active]="selectedTab == tab" *ngFor="let tab of tabs" (click)="onSelectTab(tab)" >
+      {{tab}}
+    </h2>
+  </div>
+  <ng-content select="[rightTabButton]"></ng-content>
+</div>
+
+<div class="tab-content">
+  <ng-content select="[appTabContent]"></ng-content>
+</div>

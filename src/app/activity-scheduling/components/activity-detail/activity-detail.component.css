@@ -1,0 +1,29 @@
+.activity-detail .img-container {
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    border-top-right-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
+}
+
+.activity-detail .content .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.activity-detail > .content {
+    padding: 20px;
+    
+}
+
+.activity-detail > .content .schedule {
+    margin-top: 8px;
+}
+
+.activity-detail > .content .description {
+    margin-top: 20px;
+}

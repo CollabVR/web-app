@@ -1,0 +1,16 @@
+<mat-card class="card">
+  <img mat-card-image src="https://assetstorev1-prd-cdn.unity3d.com/package-screenshot/24ebde5a-22c5-4ed4-a16b-d7aea08adfe5_scaled.jpg"
+    alt="">
+  <div class="card-content">
+    <p class="title">{{activity.name}}</p>
+    <div class="text-container">
+      <p class="Schedule"><b>Inicio:</b> {{utils.parseActivityTime(activity.startTime)}}</p>
+      <p class="Schedule"><b>Fin:</b> {{utils.parseActivityTime(activity.endTime)}}</p>
+    </div>
+    <p>Numero de usuarios: {{activity.students.length + activity.moderators.length}}/{{activity.maxParticipants}}</p>
+    <div class="button-container">
+      <button mat-raised-button color="primary" (click)="onJoin()">REGISTRARSE</button>
+      <button mat-raised-button color="primary"  (click)="onViewMore()">VER MAS</button>
+    </div>
+  </div>
+</mat-card>

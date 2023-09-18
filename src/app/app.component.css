@@ -1,0 +1,13 @@
+.app {
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+    background-color: var(--background-color);
+}
+
+.app-content {
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+    overflow-y: auto;
+}
