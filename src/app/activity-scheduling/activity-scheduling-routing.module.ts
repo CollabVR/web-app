@@ -12,7 +12,7 @@ const routes: Routes = [
     component: ActivitiesComponent,
   },
   {
-    path: ':id',
+    path: 'id/:id',
     component: ActivityComponent,
   },
   {

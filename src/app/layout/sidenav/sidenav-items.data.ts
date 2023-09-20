@@ -13,7 +13,7 @@ export const authSidenavItems: Array<SideNavItem> = [
   {
     icon: 'format_list_bulleted_add',
     label: 'My Activities',
-    router: 'my-activities',
+    router: 'activities/my-activities',
   },
   {
     icon: 'dashboard',

@@ -30,7 +30,7 @@ export class UserSessionService {
     const [firstName, lastName] = decodedToken.fullName.split(' ');
 
     return new UserSession(
-      decodedToken.sub.toString(),
+      decodedToken.sub,
       firstName,
       lastName,
       decodedToken.email,
@@ -56,6 +56,7 @@ export class UserSessionService {
 
   clearUserSession() {
     localStorage.removeItem(USER_SESSION);
+    localStorage.removeItem(ACCESS_TOKEN);
     this.userSessionSubject.next(null);
   }
 }
