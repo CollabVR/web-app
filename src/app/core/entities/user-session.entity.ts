@@ -2,7 +2,7 @@ import { Role } from './role.entity';
 
 export class UserSession {
   constructor(
-    public id: string,
+    public id: number,
     public firstName: string,
     public lastName: string,
     public email: string,

@@ -6,13 +6,18 @@ import { catchError, throwError } from 'rxjs';
 import { ActivityEntity } from '../dtos/activity.entity';
 import { ActivityUserEntity } from '../dtos/activity-user.entity';
 import { ActivityUserRole } from '../dtos/activity-user-role.enum';
+import { UserSessionService } from 'src/app/core/services/user-session.service';
+import { Role } from 'src/app/core/entities/role.entity';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ActivityService {
   private domain: string | undefined;
-  constructor(private readonly http: HttpClient) {
+  constructor(
+    private readonly http: HttpClient,
+    private userSessionService: UserSessionService
+  ) {
     this.domain = environment.domain;
   }
 
@@ -25,11 +30,7 @@ export class ActivityService {
     );
   }
 
-  registerToActivity(
-    activity: ActivityEntity,
-    activityUserEntity: ActivityUserEntity,
-    role: ActivityUserRole
-  ) {
+  registerToActivity(activity: ActivityEntity) {
     if (
       activity.maxParticipants <=
       activity.students.length + activity.moderators.length
@@ -37,6 +38,20 @@ export class ActivityService {
       alert('Activity is full');
       return throwError(() => new Error('Activity is full'));
     }
+
+    let activityUserEntity = new ActivityUserEntity(
+      this.userSessionService.getUserSession()!.id,
+      this.userSessionService.getUserSession()!.firstName +
+        ' ' +
+        this.userSessionService.getUserSession()!.lastName
+    );
+
+    //TODO: make user have only one role
+    let role = this.userSessionService
+      .getUserSession()!
+      .roles.find((r: Role) => r.name === 'moderator')
+      ? ActivityUserRole.MODERATOR
+      : ActivityUserRole.STUDENT;
 
     switch (role) {
       case ActivityUserRole.STUDENT:
@@ -57,11 +72,14 @@ export class ActivityService {
       );
   }
 
-  leaveActivity(
-    activity: ActivityEntity,
-    activityUserId: number,
-    role: ActivityUserRole
-  ) {
+  leaveActivity(activity: ActivityEntity) {
+    let activityUserId = this.userSessionService.getUserSession()!.id;
+    let role = this.userSessionService
+      .getUserSession()!
+      .roles.find((r: Role) => r.name === 'moderator')
+      ? ActivityUserRole.MODERATOR
+      : ActivityUserRole.STUDENT;
+
     switch (role) {
       case ActivityUserRole.STUDENT:
         activity.students = activity.students.filter(

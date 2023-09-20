@@ -51,7 +51,7 @@ export class SignupComponent {
       this.authService.signup(signupDto).subscribe(
         (response) => {
           console.log('response', response);
-          this.router.navigate(['/auth/login']);
+          this.router.navigate(['/auth/signin']);
         },
         (error) => {
           console.error('Error:', error);

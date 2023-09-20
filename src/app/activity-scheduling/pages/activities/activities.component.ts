@@ -17,6 +17,6 @@ export class ActivitiesComponent {
   }
 
   navigateCreateActivity(): void {
-    this.router.navigate(['create-activity']);
+    this.router.navigate(['activities/create-activity']);
   }
 }

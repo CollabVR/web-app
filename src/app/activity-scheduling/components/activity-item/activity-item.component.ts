@@ -14,7 +14,7 @@ export class ActivityItemComponent {
   constructor(private router: Router, public utils: UtilsService) {}
 
   onViewMore(): void {
-    this.router.navigate(['activities', this.activity.id]);
+    this.router.navigate(['activities/id', this.activity.id]);
   }
 
   onJoin(): void {

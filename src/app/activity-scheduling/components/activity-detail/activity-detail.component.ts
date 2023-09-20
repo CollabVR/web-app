@@ -20,29 +20,17 @@ export class ActivityDetailComponent {
   ) {}
 
   onRegister() {
-    const user: ActivityUserEntity = {
-      userId: 62,
-      userName: 'Luis 45',
-    };
-
     this.activityService
-      .registerToActivity(this.activity!, user, ActivityUserRole.MODERATOR)
+      .registerToActivity(this.activity!)
       .subscribe((activity) => {
         this.activity = activity;
       });
   }
 
   onLeaveActivity() {
-    const user: ActivityUserEntity = {
-      userId: 55,
-      userName: 'Juan 55',
-    };
-
-    this.activityService
-      .leaveActivity(this.activity!, user.userId, ActivityUserRole.MODERATOR)
-      .subscribe((activity) => {
-        console.log('deleted activity', activity);
-        this.activity = activity;
-      });
+    this.activityService.leaveActivity(this.activity!).subscribe((activity) => {
+      console.log('deleted activity', activity);
+      this.activity = activity;
+    });
   }
 }
