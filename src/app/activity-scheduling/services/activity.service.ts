@@ -30,6 +30,32 @@ export class ActivityService {
     );
   }
 
+  deleteActivity(id: number) {
+    return this.http.delete(`${this.domain}/activities/${id}`).pipe(
+      catchError((error) => {
+        console.log('error', error);
+        return throwError(() => new Error(error.message));
+      })
+    );
+  }
+  getAllEnvironments() {
+    return this.http.get<any[]>(`${this.domain}/assets`).pipe(
+      catchError((error) => {
+        console.log('error', error);
+        return throwError(() => new Error(error.message));
+      })
+    );
+  }
+
+  getEnvironmentById(id: string) {
+    return this.http.get<any>(`${this.domain}/assets/${id}`).pipe(
+      catchError((error) => {
+        console.log('error', error);
+        return throwError(() => new Error(error.message));
+      })
+    );
+  }
+
   registerToActivity(activity: ActivityEntity) {
     if (
       activity.maxParticipants <=

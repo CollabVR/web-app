@@ -1,6 +1,6 @@
 <div class="activity-detail">
   <div class="img-container"
-    [style.background-image]="'url(https://assetstorev1-prd-cdn.unity3d.com/package-screenshot/24ebde5a-22c5-4ed4-a16b-d7aea08adfe5_scaled.jpg)'">
+  [style.background-image]="'url(' + environment?.image + ')'">
   </div>
   <div class="content">
     <div class="header-content">
@@ -11,6 +11,7 @@
       </div>
       <button mat-flat-button color="primary" (click)="onRegister()">REGISTRARSE</button>
       <button mat-flat-button  (click)="onLeaveActivity()">LEAVE</button>
+      <button mat-flat-button  color="red" (click)="onDelete()">DELETE</button>
     </div>
     <mat-divider></mat-divider>
     <p class="description">
