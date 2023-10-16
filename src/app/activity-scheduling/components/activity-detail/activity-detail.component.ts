@@ -5,6 +5,7 @@ import { ActivityService } from '../../services/activity.service';
 import { ActivityEntity } from '../../dtos/activity.entity';
 import { ActivityUserEntity } from '../../dtos/activity-user.entity';
 import { ActivityUserRole } from '../../dtos/activity-user-role.enum';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-activity-detail',
@@ -13,11 +14,23 @@ import { ActivityUserRole } from '../../dtos/activity-user-role.enum';
 })
 export class ActivityDetailComponent {
   @Input() activity?: ActivityEntity;
+  environment?: { id: string; image: string };
 
   constructor(
     public utils: UtilsService,
-    public activityService: ActivityService
+    public activityService: ActivityService,
+    public router: Router
   ) {}
+
+  ngOnChanges(): void {
+    if (this.activity) {
+      this.activityService
+        .getEnvironmentById(this.activity.environmentId)
+        .subscribe((environment) => {
+          this.environment = environment;
+        });
+    }
+  }
 
   onRegister() {
     this.activityService
@@ -25,6 +38,12 @@ export class ActivityDetailComponent {
       .subscribe((activity) => {
         this.activity = activity;
       });
+  }
+
+  onDelete() {
+    this.activityService.deleteActivity(this.activity!.id).subscribe((_) => {
+      this.router.navigate(['/activities']);
+    });
   }
 
   onLeaveActivity() {

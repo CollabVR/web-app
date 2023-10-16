@@ -1,38 +1,14 @@
 <form [formGroup]="formGroup">
   <mat-radio-group aria-label="Select an option" formControlName="environmentCtrl">
     <div class="environments-content">
-      <mat-card class="environment-item">
-        <img mat-card-image
-          src="https://assetstorev1-prd-cdn.unity3d.com/key-image/673fa390-9e7d-4c7a-ad5c-abd8baf77704.jpg">
+      <!-- Loop through each environment in the environments array -->
+      <mat-card *ngFor="let environment of environments" class="environment-item">
+        <img mat-card-image [src]="environment.image">
         <mat-card-header>
-          <mat-card-title>Dev Scene</mat-card-title>
+          <mat-card-title>{{ environment.id }}</mat-card-title>
         </mat-card-header>
         <mat-card-actions>
-          <mat-radio-button value="Dev Scene" labelPosition="after">
-            Select
-          </mat-radio-button>
-        </mat-card-actions>
-      </mat-card>
-      <mat-card class="environment-item">
-        <img mat-card-image
-          src="https://assetstorev1-prd-cdn.unity3d.com/key-image/673fa390-9e7d-4c7a-ad5c-abd8baf77704.jpg">
-        <mat-card-header>
-          <mat-card-title>Environment 1</mat-card-title>
-        </mat-card-header>
-        <mat-card-actions>
-          <mat-radio-button value="Environment 1" labelPosition="after">
-            Select
-          </mat-radio-button>
-        </mat-card-actions>
-      </mat-card>
-      <mat-card class="environment-item">
-        <img mat-card-image
-          src="https://assetstorev1-prd-cdn.unity3d.com/key-image/673fa390-9e7d-4c7a-ad5c-abd8baf77704.jpg">
-        <mat-card-header>
-          <mat-card-title>Environment 2</mat-card-title>
-        </mat-card-header>
-        <mat-card-actions>
-          <mat-radio-button value="Environment 2" labelPosition="after">
+          <mat-radio-button [value]="environment.id" labelPosition="after">
             Select
           </mat-radio-button>
         </mat-card-actions>
