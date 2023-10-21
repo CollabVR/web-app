@@ -10,6 +10,7 @@ import { SharedModule } from './shared/shared.module';
 import { ViewsModule } from './views/views.module';
 import { ActivitySchedulingModule } from './activity-scheduling/activity-scheduling.module';
 import { JwtModule } from '@auth0/angular-jwt';
+import { PlatformsAnalyticsModule } from './platform-analytics/platform-analytics.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,6 +33,7 @@ import { JwtModule } from '@auth0/angular-jwt';
     SharedModule,
     ViewsModule,
     ActivitySchedulingModule,
+    PlatformsAnalyticsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
