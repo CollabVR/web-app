@@ -2,12 +2,12 @@
 
 <div class="app-create-activities">
   <mat-stepper #stepper linear>
-    <mat-step [stepControl]="generalActivityDetailFormGroup" label="Detalles de la actividad">
+    <!-- <mat-step [stepControl]="generalActivityDetailFormGroup" label="Detalles de la actividad">
       <app-general-activity-detail-form [formGroup]="generalActivityDetailFormGroup" />
     </mat-step>
     <mat-step [stepControl]="specificActivityDetailFormGroup" label="Horario y Participantes" >
       <app-activity-participants-form [formGroup]="specificActivityDetailFormGroup" />
-    </mat-step>
+    </mat-step> -->
     <mat-step [stepControl]="activityEnvironmentsFormGroup" label="Entornos">
       <app-activity-environments-form [formGroup]="activityEnvironmentsFormGroup" />
       <button mat-button matStepperPrevious>Back</button>
