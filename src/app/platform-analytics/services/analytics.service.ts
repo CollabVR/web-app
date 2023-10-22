@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { catchError, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ActivityActionEntity } from '../dtos/activity-action.entity';
+import { UserActionEntity } from '../dtos/user-action.entity';
 
 
 @Injectable({
@@ -16,16 +17,23 @@ export class AnalyticsService {
   }
 
   getAllActivityActions() {
-    return this.http.get<ActivityActionEntity[]>(`${this.domain}/analytics/activity-action`).pipe(
-      catchError((error) => {
-        console.log('error', error);
-        return throwError(() => new Error(error.message));
-      })
-    );
+    return this.http.get<ActivityActionEntity[]>(`${this.domain}/analytics/activity-action`)
+      .pipe(
+        catchError((error) => {
+          console.log('error', error);
+          return throwError(() => new Error(error.message));
+        })
+      );
   }
 
   getAllUserActions() {
-
+    return this.http.get<UserActionEntity[]>(`${this.domain}/analytics/user-actions`)
+      .pipe(
+        catchError((error) => {
+          console.log('error', error);
+          return throwError(() => new Error(error.message));
+        })
+      );
   }
 
 }

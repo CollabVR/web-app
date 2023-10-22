@@ -1,8 +1,12 @@
 <app-header>Platform Analytics</app-header>
 
-<div class="grid">
+<div class="grid-activity">
   <div class="box-shadow" [chart]="activityActionsChart"></div>
   <div class="box-shadow" [chart]="maximumUsersConnectedPerActivityChart"></div>
 </div>
 <br>
+<div class="grid-activity-actions">
+  <div class="box-shadow" [chart]="userSpeakingTimeByACtivityChart"></div>
+  <div class="box-shadow" [chart]="userSpeakingTimeChart"></div>
+</div>
 
