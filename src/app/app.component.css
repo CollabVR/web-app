@@ -11,3 +11,7 @@
     padding-left: 20px;
     overflow-y: auto;
 }
+
+.auth-app {
+    display: flex;
+}
