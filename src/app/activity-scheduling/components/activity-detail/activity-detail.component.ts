@@ -6,6 +6,7 @@ import { ActivityEntity } from '../../dtos/activity.entity';
 import { ActivityUserEntity } from '../../dtos/activity-user.entity';
 import { ActivityUserRole } from '../../dtos/activity-user-role.enum';
 import { Router } from '@angular/router';
+import { UserSessionService } from 'src/app/core/services/user-session.service';
 
 @Component({
   selector: 'app-activity-detail',
@@ -19,8 +20,9 @@ export class ActivityDetailComponent {
   constructor(
     public utils: UtilsService,
     public activityService: ActivityService,
-    public router: Router
-  ) {}
+    public router: Router,
+    private userSessionService: UserSessionService,
+  ) { }
 
   ngOnChanges(): void {
     if (this.activity) {
@@ -48,8 +50,24 @@ export class ActivityDetailComponent {
 
   onLeaveActivity() {
     this.activityService.leaveActivity(this.activity!).subscribe((activity) => {
-      console.log('deleted activity', activity);
       this.activity = activity;
+      window.location.reload();
     });
+  }
+
+
+  isJoined(): boolean {
+    const isStudentJoinend = this.activity?.students.find((student) => student.userId === this.userSessionService.getUserSession()?.id);
+    const isModeratorJoinend = this.activity?.moderators.find((student) => student.userId === this.userSessionService.getUserSession()?.id);
+
+    if (isStudentJoinend || isModeratorJoinend) return true;
+    return false;
+  }
+
+  isModerator(): boolean {
+    return this.userSessionService.getUserSession()?.roles
+      .find(
+        role => role.name.toUpperCase() === ActivityUserRole.MODERATOR
+      ) ? true : false;
   }
 }

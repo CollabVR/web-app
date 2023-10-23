@@ -1,12 +1,15 @@
 .card {
     width: 100% ;
     max-width: 320px;
+    cursor: pointer;
 }
 
-.card img {
-    overflow: hidden;
-    width: auto;
-    max-height: 240px;
+.img-container {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
 }
 
 .card-content {
