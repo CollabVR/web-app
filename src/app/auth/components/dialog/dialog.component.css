@@ -1,0 +1,14 @@
+.mat-dialog-actions {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+    gap: 10px;
+    padding: 0px 80px 0px 80px; /* top | right | bottom | left */
+}
+
+.verification-code-content {
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+}

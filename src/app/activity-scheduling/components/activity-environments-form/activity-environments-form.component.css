@@ -13,3 +13,11 @@
 .environment-item:hover {
     cursor: pointer;
 }
+
+.img-container {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}

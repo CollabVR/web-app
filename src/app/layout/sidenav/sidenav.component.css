@@ -1,11 +1,7 @@
 .sidenav {
     background-color: var(--primary-color);
-    /* margin-left: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px; */
     height: 100%;
     width: 280px;
-    /* border-radius: var(--border-radius); */
     box-shadow: var(--box-shadow);
 }
 

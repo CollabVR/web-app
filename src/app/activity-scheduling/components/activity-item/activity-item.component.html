@@ -1,6 +1,6 @@
-<mat-card class="card">
-  <img mat-card-image [src]="environment?.image"
-    alt="">
+<mat-card class="card" (click)="onViewMore()">
+  <div class="img-container" [style.background-image]="'url(' + environment?.image + ')'">
+  </div>
   <div class="card-content">
     <p class="title">{{activity.name}}</p>
     <div class="text-container">
@@ -9,8 +9,8 @@
     </div>
     <p>Numero de usuarios: {{activity.students.length + activity.moderators.length}}/{{activity.maxParticipants}}</p>
     <div class="button-container">
-      <button mat-raised-button color="primary" (click)="onJoin()">REGISTRARSE</button>
-      <button mat-raised-button color="primary"  (click)="onViewMore()">VER MAS</button>
+      <button *ngIf="!isJoined(activity)" mat-raised-button color="primary" (click)="onJoin($event)">REGISTRARSE</button>
+      <button *ngIf="isJoined(activity)" mat-raised-button color="primary" (click)="onLeave($event)">SALIR</button>
     </div>
   </div>
 </mat-card>

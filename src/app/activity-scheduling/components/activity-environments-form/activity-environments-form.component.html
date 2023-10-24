@@ -3,7 +3,10 @@
     <div class="environments-content">
       <!-- Loop through each environment in the environments array -->
       <mat-card *ngFor="let environment of environments" class="environment-item">
-        <img mat-card-image [src]="environment.image">
+        
+        <div class="img-container" [style.background-image]="'url(' + environment?.image + ')'">
+        </div>
+
         <mat-card-header>
           <mat-card-title>{{ environment.id }}</mat-card-title>
         </mat-card-header>

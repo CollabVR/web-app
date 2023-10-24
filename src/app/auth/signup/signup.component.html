@@ -1,47 +1,67 @@
-<mat-card>
-    <mat-card-header>
-      <mat-card-title>Create Account</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-        <mat-form-field appearance="fill">
-          <mat-label>Email</mat-label>
-          <input matInput type="email" formControlName="email" required>
-          <mat-error *ngIf="signupForm.get('email')!.hasError('required')">
-            Email is required.
-          </mat-error>
-        </mat-form-field>
-  
-        <button mat-button (click)="sendVerificationCode()">Get Verification Code</button>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Verification Code</mat-label>
-          <input matInput type="number"     formControlName="emailVerificationCode" required>
-          <mat-error *ngIf="signupForm.get('emailVerificationCode')!.hasError('required')">
-            Verification code is required.
-          </mat-error>
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>First Name</mat-label>
-          <input matInput type="text" formControlName="firstName" required>
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Last Name</mat-label>
-          <input matInput type="text" formControlName="lastName" required>
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Password</mat-label>
-          <input matInput type="password" formControlName="password" required>
-        </mat-form-field>
-  
-        <div>
-          <button mat-raised-button color="primary" type="submit" [disabled]="!signupForm.valid">Sign Up</button>
-        </div>
-  
+<div class="auth-app">
+  <div class="side-image"></div>
+
+  <div class="form-content">
+    <h1 class="header">Collab VR</h1>
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <h2>Sign Up</h2>
+        </mat-card-title>
+      </mat-card-header>
+
+      <form [formGroup]="signupForm">
+        <mat-card-content>
+          <mat-form-field appearance="fill">
+            <mat-label>First Name</mat-label>
+            <input matInput type="text" formControlName="firstName" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input matInput type="text" formControlName="lastName" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" formControlName="email" required>
+            <mat-error *ngIf="signupForm.get('email')!.hasError('required')">
+              Email is required.
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password" required>
+          </mat-form-field>
+
+          <!-- <mat-form-field appearance="fill">
+            <mat-label>Verification Code</mat-label>
+            <input matInput type="number" formControlName="emailVerificationCode" required>
+            <mat-error *ngIf="signupForm.get('emailVerificationCode')!.hasError('required')">
+              Verification code is required.
+            </mat-error>
+          </mat-form-field> -->
+
+          <!-- <button mat-button (click)="sendVerificationCode()">
+            Get Verification Code
+          </button> -->
+
+          <button mat-raised-button color="primary" (click)="sendVerificationCode()" [disabled]="!signupForm.valid">
+            Sign Up
+          </button>
+
+          <div class="signin-options">
+            <b>Do you already have an account?</b>
+            <button mat-stroked-button color="primary" (click)="navigateToSignin()">
+              Sign In
+            </button>
+          </div>
+
+        </mat-card-content>
       </form>
-    </mat-card-content>
-  </mat-card>
-  
+
+    </mat-card>
+  </div>
+</div>
