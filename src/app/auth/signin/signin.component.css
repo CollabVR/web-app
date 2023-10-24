@@ -13,6 +13,7 @@
     background: url('https://firebasestorage.googleapis.com/v0/b/prueba-43bf8.appspot.com/o/vr-project%2FDALL%C2%B7E%202023-10-23%2016.53.57%20-%20A%20person%20in%20a%20futuristic%20virtual%20reality%20headset%2C%20surrounded%20by%20a%20sea%20of%20vibrant%20data%20and%20sensory%20stimuli%2C%20interactting%20with%20a%20virtual%20reality%20environ.png?alt=media&token=3b3ff342-08d2-497d-890c-b749c911856c');
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .form-content {
