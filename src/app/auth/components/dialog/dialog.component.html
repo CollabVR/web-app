@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>Hi, {{ data.name }}!</h1>
+
+<div mat-dialog-content>
+  <p>Para completar con el registro, hemos enviado un codigo de <br>
+    verificación al siguiente e-mail: <b> {{ data.email }}</b>
+  </p>
+
+  <div class="verification-code-content">
+    <mat-form-field>
+      <mat-label>Verification Code</mat-label>
+      <input matInput [(ngModel)]="data.code">
+    </mat-form-field>
+  </div>
+</div>
+
+<div class="mat-dialog-actions">
+  <button mat-flat-button color="primary" [mat-dialog-close]="data.email" [disabled]="data.code == ''">
+    Confirmar codigo
+  </button>
+  <button mat-button [mat-dialog-close]="data.code" (click)="onNoClick()">
+    Cancel
+  </button>
+</div>

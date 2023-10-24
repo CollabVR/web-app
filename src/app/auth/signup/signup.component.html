@@ -11,7 +11,7 @@
         </mat-card-title>
       </mat-card-header>
 
-      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <form [formGroup]="signupForm">
         <mat-card-content>
           <mat-form-field appearance="fill">
             <mat-label>First Name</mat-label>
@@ -36,28 +36,28 @@
             <input matInput type="password" formControlName="password" required>
           </mat-form-field>
 
-          
-
-          <mat-form-field appearance="fill">
+          <!-- <mat-form-field appearance="fill">
             <mat-label>Verification Code</mat-label>
             <input matInput type="number" formControlName="emailVerificationCode" required>
             <mat-error *ngIf="signupForm.get('emailVerificationCode')!.hasError('required')">
               Verification code is required.
             </mat-error>
-          </mat-form-field>
+          </mat-form-field> -->
 
-          <button mat-button (click)="sendVerificationCode()">Get Verification Code</button>
+          <!-- <button mat-button (click)="sendVerificationCode()">
+            Get Verification Code
+          </button> -->
 
-
-
-
-          <button mat-raised-button color="primary" type="submit" [disabled]="!signupForm.valid">Sign Up</button>
+          <button mat-raised-button color="primary" (click)="sendVerificationCode()" [disabled]="!signupForm.valid">
+            Sign Up
+          </button>
 
           <div class="signin-options">
             <b>Do you already have an account?</b>
-            <button mat-stroked-button color="primary" (click)="navigateToSignin()">Sign In</button>
+            <button mat-stroked-button color="primary" (click)="openDialog()">
+              Sign In
+            </button>
           </div>
-
 
         </mat-card-content>
       </form>

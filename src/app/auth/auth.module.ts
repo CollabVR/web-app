@@ -12,9 +12,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [SignupComponent, SigninComponent],
+  declarations: [SignupComponent, SigninComponent, DialogComponent],
   imports: [
     CommonModule,
     AuthRoutingModule,
@@ -26,6 +29,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     ReactiveFormsModule,
     MatStepperModule,
     MatSnackBarModule,
+    MatDialogModule,
+    FormsModule,
   ],
 })
 export class AuthModule {}
