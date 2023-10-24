@@ -33,7 +33,9 @@ export class ActivityItemComponent {
     this.router.navigate(['activities/id', this.activity.id]);
   }
 
-  onJoin(): void {
+  onJoin(event: Event): void {
+    event.stopPropagation();
+    
     this.activityService
       .registerToActivity(this.activity)
       .subscribe((activity) => {
@@ -41,7 +43,9 @@ export class ActivityItemComponent {
       });
   }
 
-  onLeave(): void {
+  onLeave(event: Event): void {
+    event.stopPropagation();
+
     this.activityService.leaveActivity(this.activity!).subscribe((activity) => {
       console.log('deleted activity', activity);
       this.activity = activity;
