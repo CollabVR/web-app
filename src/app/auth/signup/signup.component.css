@@ -1,0 +1,61 @@
+.auth-app {
+    display: flex;
+    height: 100vh;
+    flex-direction: row-reverse;
+    justify-items: center;
+    align-items: center;
+    background-color: var(--background-color);
+}
+
+.side-image {
+    height: 100vh;
+    width: 50vw;
+    background: url('https://firebasestorage.googleapis.com/v0/b/prueba-43bf8.appspot.com/o/vr-project%2FDALL%C2%B7E%202023-10-22%2020.59.05%20-%20A%20person%20in%20a%20futuristic%20virtual%20reality%20headset%2C%20surrounded%20by%20a%20sea%20of%20vibrant%20data%20and%20sensory%20stimuli%2C%20interactting%20with%20a%20virtual%20reality%20environ.png?alt=media&token=80c69d6e-4e13-4f9f-ac8f-640446917a51');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+}
+
+.form-content .header {
+    padding-bottom: 60px;
+    color: #434343;
+    font-size: 60px;
+}
+
+mat-card {
+    min-width: 70%;
+    max-width: 90%;
+}
+
+mat-card-header {
+    color: #434343;
+    padding-left: 40px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+mat-card-content {
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+    padding-right: 40px;
+    gap: 8px;
+}
+
+.signin-options {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    border-top: #bbbbbb 1px solid;
+    margin-top: 20px;
+}

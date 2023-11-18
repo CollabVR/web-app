@@ -25,6 +25,10 @@ const routes: Routes = [
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
   {
+    path: 'dashboard',
+    loadChildren: () => import('./platform-analytics/platform-analytics.module').then((m) => m.PlatformsAnalyticsModule),
+  },
+  {
     path: 'unauthorized',
     component: UnauthorizedComponent,
   },
@@ -52,4 +56,4 @@ const routes: Routes = [
     },
   ],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

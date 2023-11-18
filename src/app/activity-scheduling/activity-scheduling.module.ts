@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatIconModule } from '@angular/material/icon';
 
 import { ActivitiesComponent } from './pages/activities/activities.component';
 import { MyActivitiesComponent } from './pages/my-activities/my-activities.component';
@@ -60,6 +61,7 @@ import { ActivitySchedulingRoutingModule } from './activity-scheduling-routing.m
     MatDividerModule,
     MatSnackBarModule,
     ActivitySchedulingRoutingModule,
+    MatIconModule,
   ],
 })
 export class ActivitySchedulingModule {}

@@ -1,0 +1,18 @@
+.box-shadow {
+    border-radius: var(--border-radius);
+    background-color: var(--secondary-color);
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+}
+
+.grid-activity-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;    
+}
+
+.grid-activity {
+    display: grid;
+    grid-template-columns: 1fr .6fr;
+    grid-gap: 20px;
+}

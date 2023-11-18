@@ -1,27 +1,43 @@
-<mat-card>
-    <mat-card-header>
-      <mat-card-title>Sign In</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
+<div class="auth-app">
+  <div class="side-image"></div>
+
+  <div class="form-content">
+    <h1 class="header">Collab VR</h1>
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title><h2>Sign In</h2></mat-card-title>
+      </mat-card-header>
+
       <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
-        <mat-form-field appearance="fill">
-          <mat-label>Email</mat-label>
-          <input matInput type="email" formControlName="email" required>
-          <mat-error *ngIf="signinForm.get('email')!.hasError('required')">
-            Email is required.
-          </mat-error>
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Password</mat-label>
-          <input matInput type="password" formControlName="password" required>
-          <mat-error *ngIf="signinForm.get('password')!.hasError('required')">
-            Password is required.
-          </mat-error>
-        </mat-form-field>
-  
-        <button mat-raised-button color="primary" type="submit" [disabled]="!signinForm.valid">Sign In</button>
+        <mat-card-content>
+          <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" formControlName="email" required>
+            <mat-error *ngIf="signinForm.get('email')!.hasError('required')">
+              Email is required.
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password" required>
+            <mat-error *ngIf="signinForm.get('password')!.hasError('required')">
+              Password is required.
+            </mat-error>
+          </mat-form-field>
+
+          <button mat-raised-button color="primary" type="submit" [disabled]="!signinForm.valid">Sign In</button>
+          
+          <div class="signup-options">
+            <b>Do not you have an account yet?</b>
+            <button mat-stroked-button color="primary" (click)="navigateToSignup()">Sign Up</button>
+          </div>
+          
+        </mat-card-content>
       </form>
-    </mat-card-content>
-  </mat-card>
-  
+
+    </mat-card>
+  </div>
+
+</div>
